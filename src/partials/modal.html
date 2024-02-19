@@ -2,8 +2,12 @@
     <div class="modal-content">
       <h2>Movie Title</h2>
       <!-- Additional movie information will be dynamically added here -->
-      <button class="modal-btn" id="add-to-watched">Add to Watched</button>
-      <button class="modal-btn" id="add-to-queue">Add to Queue</button>
-      <button class="modal-btn" id="close-button" class="close-button">Close</button>
+      <button id="add-to-watched" class="modal-btn">Add to Watched</button>
+      <button id="add-to-queue" class="modal-btn">Add to Queue</button>
+      <button id="close-button" class="close-button" data-modal-close>
+        <svg class="close-icon" width="30" height="30">
+          <use xlink:href="./images/svg/icons.svg#close"></use>
+        </svg>
+      </button>
     </div>
 </div>

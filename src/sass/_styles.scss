@@ -204,6 +204,28 @@ body {
 	background-color: var(--active);
 	border: 1px solid var(--active);
 	color: var(--white);
+  }
+
+  .close-button {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 2.5%;
+    left: 90%;
+    background-color: transparent;
+  }
+
+  .close-button:hover > .close-icon {
+	stroke: var(--active);
+  }
+
+  .close-button:active > .close-icon {
+	stroke: var(--active);
+  }
 // End of MODAL Styling --------------------------------------------------
 
 
