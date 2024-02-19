@@ -4,202 +4,175 @@ body {
 }
 
 // Start of HEADER Styling --------------------------------------------------
-.site-header {
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	width: auto;
-	height: 230px;
-}
+	.site-header {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		width: auto;
+		height: 230px;
+	}
 
-.site-header.main {
-	background-image: url("../images/header-bg.jpg");
-	background-size: cover;
-}
+	.site-header.main {
+		background-image: url("../images/header-bg.jpg");
+		background-size: cover;
+	}
 
-.site-header.mylibrary {
-	background-image: url("../images/mylibrary-header-bg.jpg");
-	background-size: cover;
-}
+	.site-header.mylibrary {
+		background-image: url("../images/mylibrary-header-bg.jpg");
+		background-size: cover;
+	}
 
-.site-header .logo {
-	display: none;
-	color: var(--white);
-	font-size: 30px;
-	margin-left: 14px;
-}
+	.site-header .logo {
+		display: none;
+		color: var(--white);
+		font-size: 30px;
+		margin-left: 14px;
+	}
 
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-.logo-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+	.logo-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-ul {
-	display: flex;
-	justify-content: right;
-	gap: 41px;
-}
+	ul {
+		display: flex;
+		justify-content: right;
+		gap: 41px;
+	}
 
-nav ul li a {
-	color: var(--white);
-	font-size: 12px;
-}
+	nav ul li a {
+		color: var(--white);
+		font-size: 12px;
+	}
 
-.active {
-	text-decoration: underline;
-	text-decoration-color: var(--active);
-	text-decoration-thickness: 3px;
-}
+	.active {
+		text-decoration: underline;
+		text-decoration-color: var(--active);
+		text-decoration-thickness: 3px;
+	}
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
+	.form-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+	}
 
-.search-form {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin-top: 42px;
-	width: auto;
-}
+	.search-form {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-top: 42px;
+		width: auto;
+	}
 
-#search-input {
-	outline: 0;
-	border-width: 0 0 2px;
-	border-color: var(--footer-text);
-	background-color: transparent;
-	padding: 5px 0px 5px 0px;
-	position: absolute;
-	top: 8%;
-	left: 0%;
-	z-index: 1;
-	width: 100%;
-    color: var(--white);
-}
+	#search-input {
+		outline: 0;
+		border-width: 0 0 2px;
+		border-color: var(--footer-text);
+		background-color: transparent;
+		padding: 5px 0px 5px 0px;
+		position: absolute;
+		top: 8%;
+		left: 0%;
+		z-index: 1;
+		width: 100%;
+		color: var(--white);
+	}
 
-::placeholder {
-	color: var(--white);
-	font-size: 14px;
-}
+	::placeholder {
+		color: var(--white);
+		font-size: 14px;
+	}
 
-.search-btn {
-	background-color: transparent;
-	border-color: var(--white);
-	position: absolute;
-	top: 8%;
-	right: 0%;
-	z-index: 5;
-}
+	.search-btn {
+		background-color: transparent;
+		border-color: var(--white);
+		position: absolute;
+		top: 8%;
+		right: 0%;
+		z-index: 5;
+	}
 
-.alert-text {
-	color: var(--alert);
-	font-size: 14px;
-	margin-top: 60px;
-	margin-bottom: 36px;
-}
+	.alert-text {
+		color: var(--alert);
+		font-size: 14px;
+		margin-top: 60px;
+		margin-bottom: 36px;
+	}
 
-.btn-container {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	margin: 48px 0 65px 0;
-}
+	.btn-container {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		margin: 48px 0 65px 0;
+	}
 
-.btn {
-	width: 130px;
-	height: 44px;
-	border-radius: 5%;
-	color: var(--white);
-	background: transparent;
-	border: 1px solid var(--white);
-	cursor: pointer;
-}
+	.btn {
+		width: 130px;
+		height: 44px;
+		border-radius: 5%;
+		color: var(--white);
+		background: transparent;
+		border: 1px solid var(--white);
+		cursor: pointer;
+	}
 
-.btn:active {
-	background-color: var(--active);
-	border: 1px solid var(--active);
-}
+	.btn:active {
+		background-color: var(--active);
+		border: 1px solid var(--active);
+	}
 // End of HEADER Styling --------------------------------------------------
 
 // Start of MAIN Styling --------------------------------------------------
-main {
-	padding: 20px;
-    place-self: center;
-}
+	main {
+		padding: 20px;
+		place-self: center;
+	}
 
-.movie-card {
-    width: 274px;
-    height: auto;
-    float: left;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-  
-.movie-card img {
-    border-radius: 10%;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-}
-
-h3 {
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-.movie-details {
-    text-transform: capitalize;
-    font-size: 12px;
-    color: var(--active);
-}
-
-#pagination {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    text-align: center;
-    margin: auto;
-  }
-
+	#pagination {
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 9999;
+		text-align: center;
+		margin: auto;
+	}
 // End of MAIN Styling --------------------------------------------------
 
 // Start of FOOTER Styling --------------------------------------------------
-.site-footer {
-    background-color: var(--footer-bg);
-    text-align: center;
-    align-self: end;
-    padding: 1.5em 0;
-}
+	.site-footer {
+		background-color: var(--footer-bg);
+		text-align: center;
+		align-self: end;
+		padding: 1.5em 0;
+	}
 
-.site-footer span {
-	font-size: 14px;
-	color: var(--footer-text);
-}
+	.site-footer span {
+		font-size: 14px;
+		color: var(--footer-text);
+	}
 
-.site-footer a {
-	font-size: 14px;
-	color: var(--footer-text);
-	text-decoration: underline;
-}
+	.site-footer a {
+		font-size: 14px;
+		color: var(--footer-text);
+		text-decoration: underline;
+	}
 
-span.heart {
-	color: var(--active);
-}
+	span.heart {
+		color: var(--active);
+	}
 // End of FOOTER Styling --------------------------------------------------
 
 
-  /* Modal styling */
+// Start of MODAL Styling --------------------------------------------------
   #modal {
     display: none;
     position: fixed;
@@ -216,76 +189,96 @@ span.heart {
     background-color: white;
     padding: 20px;
   }
-  
+
+  .modal-btn {
+	width: 113px;
+	height: 44px;
+	border-radius: 5%;
+	color: var(--black);
+	background: transparent;
+	border: 1px solid var(--black);
+	cursor: pointer;
+  }
+
+  .modal-btn:active {
+	background-color: var(--active);
+	border: 1px solid var(--active);
+	color: var(--white);
+// End of MODAL Styling --------------------------------------------------
 
 
 
-/* Tablet Styling */
-@media (min-width: 768px) {
-	.site-header.main {
-		background-image: url("../images/header-bg-tablet.jpg");
-		background-size: cover;
-        position: relative;
+
+
+
+
+/* Start of Tablet Styling */
+	@media (min-width: 768px) {
+		.site-header.main {
+			background-image: url("../images/header-bg-tablet.jpg");
+			background-size: cover;
+			position: relative;
+		}
+		
+		.site-header.mylibrary {
+			background-image: url("../images/mylibrary-header-bg-tablet.jpg");
+			background-size: cover;
+		}
+
+		.site-header .logo {
+			display: inline;
+		}	
+
+		.form-container {
+			position: absolute;
+			top: 25%;
+			left: 30%;
+		}
+
+		#search-input {
+			width: 390px;
+		}
+
+		.search-btn {
+			top: 14%;
+			left: 101%;
+		}
 	}
-	
-	.site-header.mylibrary {
-		background-image: url("../images/mylibrary-header-bg-tablet.jpg");
-		background-size: cover;
+/* End of Tablet Styling */
+
+
+
+/* Start of Desktop Styling */
+	@media (min-width: 1024px) {
+		.site-header.main {
+			background-image: url("../images/header-bg-desktop.jpg");
+			background-size: cover;
+			position: relative
+		}
+		
+		.site-header.mylibrary {
+			background-image: url("../images/mylibrary-header-bg-desktop.jpg");
+			background-size: cover;
+		}
+
+		.site-header .logo {
+			display: inline;
+		}	
+
+		.form-container {
+			position: absolute;
+			top: 25%;
+			left: 39%;
+		}
+
+		#search-input {
+			width: 390px;
+		}
+
+		.search-btn {
+			top: 14%;
+			left: 101%;
+		}
+
 	}
-
-	.site-header .logo {
-		display: inline;
-	}	
-
-    .form-container {
-        position: absolute;
-        top: 25%;
-        left: 30%;
-    }
-
-    #search-input {
-        width: 390px;
-    }
-
-    .search-btn {
-        top: 14%;
-        left: 101%;
-    }
-}
-
-
-
-
-/* Desktop Styling */
-@media (min-width: 1024px) {
-	.site-header.main {
-		background-image: url("../images/header-bg-desktop.jpg");
-		background-size: cover;
-        position: relative
-	}
-	
-	.site-header.mylibrary {
-		background-image: url("../images/mylibrary-header-bg-desktop.jpg");
-		background-size: cover;
-	}
-
-	.site-header .logo {
-		display: inline;
-	}	
-
-    .form-container {
-        position: absolute;
-        top: 25%;
-        left: 39%;
-    }
-
-    #search-input {
-        width: 390px;
-    }
-
-    .search-btn {
-        top: 14%;
-        left: 101%;
-    }
-
-}
+/* Start of Desktop Styling */
