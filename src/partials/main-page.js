@@ -62,3 +62,5 @@ function getMovieReleaseDate(year){
     const movieDate = new Date(dateString);
     return movieDate.getFullYear();
 }
+
+export { fetchPopularMovies };
