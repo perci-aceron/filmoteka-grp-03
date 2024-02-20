@@ -1,3 +1,3 @@
-import fetchPopularMovies from "./partials/main-page";
+import { fetchPopularMovies } from './partials/main-page';
 
 fetchPopularMovies();
