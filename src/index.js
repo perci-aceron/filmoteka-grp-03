@@ -5,8 +5,6 @@ import { showWatchedMovies, showQueueMovies } from './partials/t3-library-page';
 const page = 1;
 const itemsPerPage = 18;
 
-fetchPopularMovies(page, itemsPerPage);
-
 showLoader();
 
 setTimeout(() => {
