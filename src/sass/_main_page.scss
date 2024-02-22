@@ -7,18 +7,16 @@ main {
   }
 
 .movie-card {
-    border: 1px solid #ccc;
-    float: left;
-    width: 274px;
-    height: 460px;
-    margin: 30px;
-    box-sizing: border-box;
-    border: none;
-    overflow: hidden; /* Add this property to prevent image overflow */
-    cursor: pointer;
-    
-  }
-  
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  object-fit: cover;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  width: calc(33.33% - 20px);
+  margin-bottom: 30px;
+}
+
 .movie-card img {
     width: 100%; /* Ensure the image takes 100% of the container width */
     height: 398px; /* Maintain the aspect ratio of the image */
@@ -51,9 +49,39 @@ main {
     line-height: 16px;
 }
 
-.pagination-container{
-    float: left;
-    width: 1024px;
-    height: 50px;
+#pagination-container {
+  width: 100%; 
+  text-align: center; 
+  height: 50px;
+  button {
+    margin: 0 5px; 
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
 }
- 
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 1024px) {
+  .movie-card {
+      width: calc(33.33% - 20px);
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .movie-card {
+      width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movie-card {
+      width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #movie-container {
+      justify-content: center;
+  }
+}
