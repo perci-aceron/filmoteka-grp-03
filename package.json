@@ -2,14 +2,14 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://dmitryberesten.github.io/filmoteka",
+  "homepage": "https://perci-aceron.github.io/filmoteka-grp-03",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /filmoteka/"
+    "build": "parcel build src/*.html --public-url /filmoteka-grp-03/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmitryberesten/filmoteka.git"
+    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
