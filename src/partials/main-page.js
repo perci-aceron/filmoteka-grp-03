@@ -1,6 +1,9 @@
 import { genresNamesById } from "./genre";
+import { genresNamesById } from "./genre";
 import { showLoader, hideLoader } from './t5-loader-functionality';
 
+const api_key = '9ce408291b177c2a2e598968d33c0b4a';
+const base_url = 'https://api.themoviedb.org/3/';
 const api_key = '9ce408291b177c2a2e598968d33c0b4a';
 const base_url = 'https://api.themoviedb.org/3/';
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -80,13 +83,16 @@ fetchPopularMovies(currentPage, itemsPerPage);
 
 function showMovies(data) {
   movieContainer.innerHTML = ' ';
+  movieContainer.innerHTML = ' ';
 
   data.forEach(movie => {
     const { title, poster_path, genre_ids, release_date } = movie;
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
     movieCard.innerHTML = `<img src ="${IMAGE_URL}${poster_path} alt="${title}"/>
+    movieCard.innerHTML = `<img src ="${IMAGE_URL}${poster_path} alt="${title}"/>
             <div class="movie-card-text">
+            <h2 class="movie-title">${title}</h2>
             <h2 class="movie-title">${title}</h2>
             <p class="movie-card-genre">${getGenre(genre_ids)} 
             <span class="movie-release">| ${getMovieReleaseDate(
@@ -99,6 +105,10 @@ function showMovies(data) {
 }
 
 function getGenre(movieGenre) {
+  const genreNames = movieGenre.map(id => {
+    const genre = genresNamesById.find(g => g.id === id);
+    return genre.name;
+  });
   const genreNames = movieGenre.map(id => {
     const genre = genresNamesById.find(g => g.id === id);
     return genre.name;
