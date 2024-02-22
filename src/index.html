@@ -1,44 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filmoteka</title>
-    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+    <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <link
-      rel="stylesheet"
-      href="../node_modules/basiclightbox/dist/basicLightbox.min.css"
-    />
-    <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
-  </head>
-
-  <body>
-    <!-- Header -->
-    <include src="./partials/header-main.html"></include>
-
-    <main class="main">
-      <!-- Custom components  -->
-      <include src="./partials/loader.html"></include>
-      <include src="./partials/custom-components.html"></include>
-
-      <!-- Gallery  -->
-      <include src="./partials/gallery.html"></include>
-
-      <!-- Modal form  -->
-      <include src="./partials/modal-film.html"></include>
-    </main>
-
-    <!-- Footer -->
-    <include src="./partials/footer.html"></include>
-    <include src="./partials/modal-team.html"></include>
-
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.min.js"
-      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-      crossorigin="anonymous"
-    ></script>
-
     <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <include src="./partials/t1-ui-ux.html"></include>
+    <include src="./partials/t2-main-page.html"></include>
+    <!-- <include src="./partials/t3-library-page.html"></include> -->
+    <include src="./partials/t5-loader-functionality.html"></include>
   </body>
 </html>

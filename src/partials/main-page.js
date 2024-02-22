@@ -1,11 +1,8 @@
-import { genresNamesById } from "./genre";
-import { genresNamesById } from "./genre";
+import { genresNamesById } from './genre';
 import { showLoader, hideLoader } from './t5-loader-functionality';
 
-const api_key = '9ce408291b177c2a2e598968d33c0b4a';
-const base_url = 'https://api.themoviedb.org/3/';
-const api_key = '9ce408291b177c2a2e598968d33c0b4a';
-const base_url = 'https://api.themoviedb.org/3/';
+const BASE_URL = 'https://api.themoviedb.org/3/';
+const API_KEY = '9ce408291b177c2a2e598968d33c0b4a';
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 const movieContainer = document.getElementById('movie-container');
 const paginationContainer = document.getElementById('pagination-container');
@@ -16,30 +13,14 @@ let itemsPerPage = 18;
 function createPaginationButtons(totalPages, itemsPerPage) {
   paginationContainer.innerHTML = '';
 
-  const maxVisiblePages = 9;
-  const ellipsisThreshold = 3;
+  const maxVisiblePages = 10; // Adjust the maximum number of visible pages
+  const ellipsisThreshold = 3; // Minimum number of pages needed for ellipses
 
   let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
   let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
   if (endPage - startPage + 1 < maxVisiblePages) {
     startPage = Math.max(1, endPage - maxVisiblePages + 1);
-  }
-
-  if (startPage > 1) {
-    const button = document.createElement('button');
-    button.textContent = '1';
-    button.addEventListener('click', () => {
-      currentPage = 1;
-      fetchPopularMovies(currentPage, itemsPerPage);
-    });
-    paginationContainer.appendChild(button);
-
-    if (startPage > 2) {
-      const ellipsisStart = document.createElement('span');
-      ellipsisStart.textContent = '...';
-      paginationContainer.appendChild(ellipsisStart);
-    }
   }
 
   for (let i = startPage; i <= endPage; i++) {
@@ -51,6 +32,16 @@ function createPaginationButtons(totalPages, itemsPerPage) {
     });
 
     paginationContainer.appendChild(button);
+  }
+
+  // Add ellipses before and after the page numbers
+  if (startPage > 1) {
+    const ellipsisStart = document.createElement('span');
+    ellipsisStart.textContent = '...';
+    paginationContainer.insertBefore(
+      ellipsisStart,
+      paginationContainer.firstChild
+    );
   }
 
   if (endPage < totalPages) {
@@ -83,16 +74,13 @@ fetchPopularMovies(currentPage, itemsPerPage);
 
 function showMovies(data) {
   movieContainer.innerHTML = ' ';
-  movieContainer.innerHTML = ' ';
 
   data.forEach(movie => {
     const { title, poster_path, genre_ids, release_date } = movie;
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
     movieCard.innerHTML = `<img src ="${IMAGE_URL}${poster_path} alt="${title}"/>
-    movieCard.innerHTML = `<img src ="${IMAGE_URL}${poster_path} alt="${title}"/>
             <div class="movie-card-text">
-            <h2 class="movie-title">${title}</h2>
             <h2 class="movie-title">${title}</h2>
             <p class="movie-card-genre">${getGenre(genre_ids)} 
             <span class="movie-release">| ${getMovieReleaseDate(
@@ -105,20 +93,12 @@ function showMovies(data) {
 }
 
 function getGenre(movieGenre) {
-  const genreNames = movieGenre.map(id => {
-    const genre = genresNamesById.find(g => g.id === id);
-    return genre.name;
-  });
-  const genreNames = movieGenre.map(id => {
-    const genre = genresNamesById.find(g => g.id === id);
-    return genre.name;
-  });
-
-  return genreNames.join(',');
+  return movieGenre
+    .map(id => genresNamesById.find(g => g.id === id).name)
+    .join(',');
 }
 
 function getMovieReleaseDate(year) {
-  const dateString = year;
-  const movieDate = new Date(dateString);
+  const movieDate = new Date(year);
   return movieDate.getFullYear();
 }

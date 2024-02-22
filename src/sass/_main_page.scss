@@ -1,16 +1,17 @@
-
-
 main {
-    width: 1024px;
-    margin: 0 auto;
-    display: block;
-    height: auto;
-  }
-    width: 1024px;
-    margin: 0 auto;
-    display: block;
-    height: auto;
-  }
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  height: auto;
+  box-sizing: border-box;
+}
+
+#movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
 .movie-card {
   border: 1px solid #ccc;
@@ -24,69 +25,47 @@ main {
 }
 
 .movie-card img {
-    width: 100%; /* Ensure the image takes 100% of the container width */
-    height: 398px; /* Maintain the aspect ratio of the image */
-    max-width: 100%; /* Set a maximum width to avoid overflow */
-    border-radius: 5px;
-  }
-    width: 100%; /* Ensure the image takes 100% of the container width */
-    height: 398px; /* Maintain the aspect ratio of the image */
-    max-width: 100%; /* Set a maximum width to avoid overflow */
-    border-radius: 5px;
-  }
-
-.movie-card-text{
-    height: 32px;
-    display: flex;
-    margin-top: 10px;
-    flex-direction: column;
-    gap: 2px;
-
-.movie-card-text{
-    height: 32px;
-    display: flex;
-    margin-top: 10px;
-    flex-direction: column;
-    gap: 2px;
-
-}
-.movie-title{
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 16px;
-    letter-spacing: 0em;
-    margin: 0;
-.movie-title{
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 16px;
-    letter-spacing: 0em;
-    margin: 0;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 5px;
 }
 
-.movie-card-genre{
-    margin: 0;
-    color: rgba(255, 107, 8, 1);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-.movie-card-genre{
-    margin: 0;
-    color: rgba(255, 107, 8, 1);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
+.movie-card-text {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.movie-title {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  margin: 0;
+}
+
+.movie-card-genre {
+  margin: 0;
+  color: rgba(255, 107, 8, 1);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 #pagination-container {
-  width: 100%; 
-  text-align: center; 
+  width: 100%;
+  text-align: center;
   height: 50px;
+  align-items: center;
+  margin: auto;
+
   button {
-    margin: 0 5px; 
+    margin: 0 5px;
     padding: 5px 10px;
+    border: 1px solid #ccc;
     cursor: pointer;
     background-color: #fff;
   }
