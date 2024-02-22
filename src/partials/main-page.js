@@ -13,8 +13,8 @@ let itemsPerPage = 18;
 function createPaginationButtons(totalPages, itemsPerPage) {
   paginationContainer.innerHTML = '';
 
-  const maxVisiblePages = 10; // Adjust the maximum number of visible pages
-  const ellipsisThreshold = 3; // Minimum number of pages needed for ellipses
+  const maxVisiblePages = 5;
+  const ellipsisThreshold = 3;
 
   let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
   let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
@@ -23,32 +23,55 @@ function createPaginationButtons(totalPages, itemsPerPage) {
     startPage = Math.max(1, endPage - maxVisiblePages + 1);
   }
 
+  if (startPage > 1) {
+    const buttonStart = document.createElement('button');
+    buttonStart.textContent = '1';
+    buttonStart.addEventListener('click', () => {
+      handlePaginationButtonClick(1);
+    });
+    paginationContainer.appendChild(buttonStart);
+
+    if (startPage > ellipsisThreshold) {
+      const ellipsisStart = document.createElement('span');
+      ellipsisStart.textContent = '...';
+      paginationContainer.appendChild(ellipsisStart);
+    }
+  }
+
   for (let i = startPage; i <= endPage; i++) {
     const button = document.createElement('button');
     button.textContent = i;
     button.addEventListener('click', () => {
-      currentPage = i;
-      fetchPopularMovies(currentPage, itemsPerPage);
+      handlePaginationButtonClick(i);
     });
 
     paginationContainer.appendChild(button);
   }
 
-  // Add ellipses before and after the page numbers
-  if (startPage > 1) {
-    const ellipsisStart = document.createElement('span');
-    ellipsisStart.textContent = '...';
-    paginationContainer.insertBefore(
-      ellipsisStart,
-      paginationContainer.firstChild
-    );
+  if (endPage < totalPages) {
+    if (totalPages - endPage > ellipsisThreshold) {
+      const ellipsisEnd = document.createElement('span');
+      ellipsisEnd.textContent = '...';
+      paginationContainer.appendChild(ellipsisEnd);
+
+      const lastPageButton = document.createElement('button');
+      const lastPageNumber = Math.min(totalPages, endPage + ellipsisThreshold);
+      lastPageButton.textContent = lastPageNumber;
+      lastPageButton.addEventListener('click', () => {
+        handlePaginationButtonClick(lastPageNumber);
+      });
+      paginationContainer.appendChild(lastPageButton);
+    } else {
+      const buttonEnd = document.createElement('button');
+      buttonEnd.textContent = totalPages;
+      buttonEnd.addEventListener('click', () => {
+        handlePaginationButtonClick(totalPages);
+      });
+      paginationContainer.appendChild(buttonEnd);
+    }
   }
 
-  if (endPage < totalPages) {
-    const ellipsisEnd = document.createElement('span');
-    ellipsisEnd.textContent = '...';
-    paginationContainer.appendChild(ellipsisEnd);
-  }
+  updatePaginationButtons();
 }
 
 export async function fetchPopularMovies(page, itemsPerPage) {
@@ -69,8 +92,6 @@ export async function fetchPopularMovies(page, itemsPerPage) {
     console.error(err);
   }
 }
-
-fetchPopularMovies(currentPage, itemsPerPage);
 
 function showMovies(data) {
   movieContainer.innerHTML = ' ';
@@ -102,3 +123,23 @@ function getMovieReleaseDate(year) {
   const movieDate = new Date(year);
   return movieDate.getFullYear();
 }
+
+function updatePaginationButtons() {
+  const buttons = paginationContainer.querySelectorAll('button');
+  buttons.forEach((button, index) => {
+    if (index + 1 === currentPage) {
+      button.classList.add('clicked');
+    } else {
+      button.classList.remove('clicked');
+    }
+  });
+}
+
+function handlePaginationButtonClick(pageNumber) {
+  currentPage = pageNumber;
+  fetchPopularMovies(currentPage, itemsPerPage);
+  updatePaginationButtons();
+}
+
+fetchPopularMovies(currentPage, itemsPerPage);
+
