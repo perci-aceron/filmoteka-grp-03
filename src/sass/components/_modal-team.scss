@@ -67,20 +67,27 @@
   color: black;
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 23px;
   line-height: 35px;
   margin-bottom: 20px;
   text-align: center;
-  text-shadow: 1px 1px 1px #ccc, 1px -1px 1px #ccc, -1px 1px 1px #ccc,
-    -1px -1px 1px #ccc;
   transition: all 1s;
+  display: flex;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     padding-top: 15px;
     margin-bottom: 30px;
     font-size: 30px;
   }
+}
+
+.popcorn {
+  width: 50px;
+  height: 60px;
+  margin-left: 10px;
+  border-radius: 5px;
 }
 
 H1:hover:after {
